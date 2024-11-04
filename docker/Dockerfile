@@ -17,8 +17,3 @@ RUN source /opt/ros/noetic/setup.bash \
 # Set up launcher shell script
 COPY launch.sh /
 RUN chmod 775 /launch.sh
-
-# Set up the entrypoint
-#COPY entrypoint.sh /
-#RUN chmod 775 /entrypoint.sh
-#ENTRYPOINT [ "/entrypoint.sh" ]
