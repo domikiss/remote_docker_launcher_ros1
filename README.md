@@ -19,7 +19,7 @@ The ROS1 remote Docker launcher node is implemented in `remote_docker_launcher.c
 ```
 $ rosrun remote_docker_launcher_ros1 remote_docker_launcher USER MACHINE DOCKER_IMAGE DOCKER_COMMAND
 ```
-- `USER` and `MACHINE` are the remote user and the IP or hostname of the remote machine which is accessed via SSH (default port). 
+- `USER` and `MACHINE` are the remote user and the IP or hostname of the remote machine which is accessed via SSH (default port). It is assumed that the remote machine is accessible via SSH without having to enter a password, i.e., an SSH key is created and installed to the remote machine. If you are unfamiliar with this topic, check this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server).
 
 - `DOCKER_IMAGE` is the name of the Docker image prepared on the remote machine. It is assumed to contain a ROS1 environment, the desired ROS1 package and the `launch.sh` script mentioned above. A container based on this image is started by the node using the `docker run` command with the `-it --rm --net=host` options.
 - `DOCKER_COMMAND` is a string specifying the shell command which will be issued inside the Docker container after it is started, typically:
