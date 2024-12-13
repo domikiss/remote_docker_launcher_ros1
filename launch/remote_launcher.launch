@@ -1,0 +1,14 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="ros_master_uri" default="$(env ROS_MASTER_URI)"/>
+  <arg name="remote_user" default="$(env USER)"/>
+  <arg name="remote_machine" default="localhost"/>
+  <arg name="ros_package" default="roscpp_tutorials"/>
+  <arg name="roslaunch_file" default="talker_listener.launch"/>
+  <arg name="roslaunch_args" default=""/>
+
+  <!-- Invoke Remote Docker Launcher node -->
+  <arg name="command" default="./launch.sh -m $(arg ros_master_uri) -l $(arg remote_machine) -p $(arg ros_package) -f $(arg roslaunch_file) $(arg roslaunch_args)"/>
+  <node pkg="remote_docker_launcher_ros1" type="remote_launcher" name="remote_launcher_node" output="screen" required="true" args='$(arg remote_user) $(arg remote_machine) "$(arg command)"'/>
+
+</launch>

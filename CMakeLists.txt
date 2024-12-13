@@ -133,6 +133,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/remote_docker_launcher_ros1_node.cpp)
 
+add_executable(remote_launcher src/remote_launcher.cpp)
 add_executable(remote_docker_launcher src/remote_docker_launcher.cpp)
 
 
@@ -151,6 +152,7 @@ add_executable(remote_docker_launcher src/remote_docker_launcher.cpp)
 #   ${catkin_LIBRARIES}
 # )
 
+target_link_libraries(remote_launcher ${catkin_LIBRARIES})
 target_link_libraries(remote_docker_launcher ${catkin_LIBRARIES})
 
 
