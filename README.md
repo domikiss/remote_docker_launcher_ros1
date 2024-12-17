@@ -27,7 +27,7 @@ $ rosrun remote_launcher_ros1 remote_launcher USER MACHINE COMMAND
   "/launch.sh -m ROS_MASTER_URI -l ROS_LOCAL_IP -p PACKAGE -f LAUNCH_FILE"
   ```
   The arguments of the `launch.sh` are the following:
-  - `-m ROS_MASTER_URI`: The ROS master URI in the form of `http://[ROS_MASTER_IP]:11311`. This parameter will be used for specifying the `ROS_MASTER_URI` environment variable inside the container.
+  - `-m ROS_MASTER_URI`: The ROS master URI in the form of `http://[ROS_MASTER_IP]:11311`. This parameter will be used for specifying the `ROS_MASTER_URI` environment variable in the remote session.
   - `-l ROS_LOCAL_IP`: IP (or hostname) of the remote machine. This parameter will be used for specifying both `ROS_IP` and `ROS_HOSTNAME` environment variables inside the container.
   - `-p PACKAGE`: Name of the ROS1 package
   - `-f LAUNCH_FILE`: The launch file of the package to be launched inside the container
@@ -39,7 +39,7 @@ To facilitate the parameterized call of the `remote_launcher` node, a launch fil
 
 - `remote_user`: User of the remote machine
 - `remote_machine`: IP address (or hostname) of the remote machine
-- `ros_master_uri`: ROS master URI n the form of `http://[ROS_MASTER_IP]:11311`
+- `ros_master_uri`: ROS master URI in the form of `http://[ROS_MASTER_IP]:11311`
 - `ros_package`: ROS1 package name available on the remote machine
 - `roslaunch_file`: Launch file name in the selected ROS1 package
 - `roslaunch_args`: Launch arguments for the launch file (optional)
@@ -54,7 +54,7 @@ $ roslaunch remote_launcher_ros1 remote_launcher.launch \
   roslaunch_file:=<MY_LAUNCH_FILE>
 ```
 
-The launch file specifies dummy default vaules for these. You can replace them with appropriate values to avoid specifying the arguments in the command line:
+The launch file specifies dummy default values for these. You can replace them with appropriate values to avoid specifying the arguments in the command line:
 ```
 $ roslaunch remote_launcher_ros1 remote_launcher.launch
 ```
@@ -87,7 +87,7 @@ To facilitate the parameterized call of the `remote_docker_launcher` node, a lau
 
 - `remote_user`: User of the remote machine
 - `remote_machine`: IP address (or hostname) of the remote machine containing the Docker image
-- `ros_master_uri`: ROS master URI n the form of `http://[ROS_MASTER_IP]:11311`
+- `ros_master_uri`: ROS master URI in the form of `http://[ROS_MASTER_IP]:11311`
 - `docker_image`: Name of the Docker image on the remote machine
 - `docker_ros_package`: ROS1 package name inside the container
 - `docker_roslaunch_file`: Launch file name in the selected ROS1 package
@@ -104,7 +104,7 @@ $ roslaunch remote_launcher_ros1 remote_docker_launcher.launch \
   docker_roslaunch_file:=<MY_LAUNCH_FILE>
 ```
 
-The launch file specifies dummy default vaules for these. You can replace them with appropriate values to avoid specifying the arguments in the command line:
+The launch file specifies dummy default values for these. You can replace them with appropriate values to avoid specifying the arguments in the command line:
 ```
 $ roslaunch remote_launcher_ros1 remote_docker_launcher.launch
 ```
