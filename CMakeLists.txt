@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(remote_docker_launcher_ros1)
+project(remote_launcher_ros1)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -102,7 +102,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES remote_docker_launcher_ros1
+#  LIBRARIES remote_launcher_ros1
 #  CATKIN_DEPENDS roscpp
 #  DEPENDS system_lib
 )
@@ -120,7 +120,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/remote_docker_launcher_ros1.cpp
+#   src/${PROJECT_NAME}/remote_launcher_ros1.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -131,7 +131,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/remote_docker_launcher_ros1_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/remote_launcher_ros1_node.cpp)
 
 add_executable(remote_launcher src/remote_launcher.cpp)
 add_executable(remote_docker_launcher src/remote_docker_launcher.cpp)
@@ -203,7 +203,7 @@ target_link_libraries(remote_docker_launcher ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_remote_docker_launcher_ros1.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_remote_launcher_ros1.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
